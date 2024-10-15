@@ -2,7 +2,12 @@
 export default {
     name: 'ProjectCard',
     props:{
-        project:Object
+        project: Object
+    },
+    methods:{
+        truncateText(text){
+            return text.substr(0, 50) + '...';  
+        }
     }
 }
 </script>
@@ -14,7 +19,7 @@ export default {
           <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
             <p v-if="project.type"><strong>Type:</strong> {{ project.type.name }}</p>
-            <p class="card-text">{{ project.description }}</p>
+            <p class="card-text">{{ truncateText(project.description) }}</p> 
             <ul v-if="project.technologies" class="list-unstyled d-flex flex-wrap gap-2">
                 <li v-for="tech in project.technologies" :key="tech.id" class="badge bg-primary">
                   {{ tech.name }}
@@ -25,7 +30,7 @@ export default {
             <small class="text-muted">Date: {{ project.date }}</small>
           </div>
         </div>
-      </div>
+    </div>
 </template>
 
 <style scoped>
