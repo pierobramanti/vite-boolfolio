@@ -13,9 +13,8 @@ export default {
     getAllProjects() {  
       axios.get('http://127.0.0.1:8000/api/projects')  
         .then(response => {
-          this.projects=response.data.results
-        })
-        
+          this.projects = response.data.results; 
+        });
     }
   }
 }
@@ -30,15 +29,15 @@ export default {
       <div class="col-12">
         <!-- ELENCO DEI PROGETTI -->
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4" v-for="proj in projects" :key="proj.id">
             <div class="card">
-              <img src="" alt="Project Image" class="card-img-top">
+              <img :src="proj.image ? `http://127.0.0.1:8000/storage/${proj.image}` : 'https://picsum.photos/200/200'" alt="Project Image" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">titolo</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste hic, vitae maxime porro iusto eum iure. Minima distinctio expedita ea, labore necessitatibus, dolores atque nemo repellendus fugit quisquam numquam possimus.</p>
+                <h5 class="card-title">{{ proj.title }}</h5>
+                <p class="card-text">{{ proj.description }}</p>
               </div>
               <div class="card-footer">
-                <small class="text-muted"></small>
+                <small class="text-muted">Date: {{ proj.date }}</small>
               </div>
             </div>
           </div>
