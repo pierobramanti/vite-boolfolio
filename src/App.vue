@@ -1,10 +1,13 @@
 <script>
 import ProjectCard from './components/ProjectCard.vue';
+import AppHeader from './components/AppHeader.vue';
 
 import axios from 'axios';
+
 export default {
   components:{
-    ProjectCard
+    ProjectCard,
+    AppHeader
   },
   data() {
     return {
@@ -37,6 +40,7 @@ export default {
 </script>
 
 <template>
+  <AppHeader/>
   <div class="container">
     <div class="row">
       <div class="col-12">
