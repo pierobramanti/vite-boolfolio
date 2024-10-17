@@ -19,7 +19,8 @@ export default {
           <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
             <p v-if="project.type"><strong>Type:</strong> {{ project.type.name }}</p>
-            <p class="card-text">{{ truncateText(project.description) }}</p> 
+            <p class="card-text">{{ truncateText(project.description) }}</p>
+            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }" class="btn btn-primary text-white p-2 rounded mb-2">Dettaglio Progetto</router-link>
             <ul v-if="project.technologies" class="list-unstyled d-flex flex-wrap gap-2">
                 <li v-for="tech in project.technologies" :key="tech.id" class="badge bg-primary">
                   {{ tech.name }}
