@@ -1,4 +1,5 @@
 <script>
+import {store} from './store.js';
 import AppHeader from './components/AppHeader.vue';
 
 import axios from 'axios';
@@ -9,14 +10,14 @@ export default {
   },
   data() {
     return {
-    
+      store
     }
   }
 }
 </script>
 
 <template>
-<AppHeader/>
+<AppHeader :menu="store.menu" />
 <router-view></router-view>
 
 
