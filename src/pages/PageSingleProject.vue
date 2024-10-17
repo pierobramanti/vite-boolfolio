@@ -15,6 +15,9 @@ export default {
                 if(res.data.success){
                     this.project = res.data.results;
                 }
+                else{
+                    
+                }
             });
         }
     }
