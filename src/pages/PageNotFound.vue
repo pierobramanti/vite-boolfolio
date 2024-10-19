@@ -9,7 +9,7 @@ export default {
     <div class="row">
         <div class="col-12">
             <div class="text-center">
-                <h1>Pagina non trovata</h1>
+                <h1>404-Pagina non trovata</h1>
             </div>
         </div>
     </div>
