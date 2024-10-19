@@ -4,6 +4,7 @@ import PageHome from './pages/PageHome.vue';
 import PagePortfolio from './pages/PagePortfolio.vue';
 import PageAbout from './pages/PageAbout.vue';
 import PageSingleProject from './pages/PageSingleProject.vue';
+import PageNotFound from './pages/PageNotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,7 +29,12 @@ const router = createRouter({
             name: 'about',
             component: PageAbout
         },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: PageNotFound
+        }
     ]
 });
 
-export { router };
+export default router;
